@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="number"] {
+            padding: 8px;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Library Management System</h1>
+
+    <form id="bookForm">
+        <label for="bookTitle">Book Title:</label>
+        <input type="text" id="bookTitle" name="bookTitle" required>
+
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" required>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required>
+
+        <input type="submit" value="Add Book">
+    </form>
+
+    <h2>Book List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Book Title</th>
+                <th>Author</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody id="bookList">
+            <!-- Book list will be displayed here -->
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById("bookForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Get form values
+            var title = document.getElementById("bookTitle").value;
+            var author = document.getElementById("author").value;
+            var quantity = document.getElementById("quantity").value;
+
+            // Create a new row for the book list
+            var newRow = document.createElement("tr");
+            newRow.innerHTML = "<td>" + title + "</td><td>" + author + "</td><td>" + quantity + "</td>";
+
+            // Append the new row to the book list
+            document.getElementById("bookList").appendChild(newRow);
+
+            // Clear form fields
+            document.getElementById("bookForm").reset();
+        });
+    </script>
+</body>
+</html>
