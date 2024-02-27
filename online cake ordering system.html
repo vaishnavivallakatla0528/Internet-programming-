@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Cake Ordering System</title>
+</head>
+<body>
+    <h1>Online Cake Ordering System</h1>
+    <form action="order_processing_script.php" method="post">
+        <label for="cake_type">Cake Type:</label>
+        <select name="cake_type" id="cake_type">
+            <option value="chocolate">Chocolate Cake</option>
+            <option value="vanilla">Vanilla Cake</option>
+            <option value="strawberry">Strawberry Cake</option>
+            <!-- Add more options as needed -->
+        </select>
+        <br>
+        <label for="size">Size:</label>
+        <select name="size" id="size">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+        <br>
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" id="quantity" min="1" max="10">
+        <br>
+        <label for="instructions">Special Instructions:</label><br>
+        <textarea name="instructions" id="instructions" rows="4" cols="50"></textarea>
+        <br>
+        <input type="submit" value="Place Order">
+    </form>
+</body>
+</html>
