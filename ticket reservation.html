@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Ticket Reservation System</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>Online Ticket Reservation System</h1>
+    
+    <form id="reservationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="ticketType">Ticket Type:</label>
+        <select id="ticketType" name="ticketType" required>
+            <option value="general">General</option>
+            <option value="vip">VIP</option>
+            <option value="premium">Premium</option>
+        </select><br><br>
+        
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="10" required><br><br>
+        
+        <button type="submit">Reserve Tickets</button>
+    </form>
+
+    <div id="reservationStatus"></div>
+    
+    <script>
+        document.getElementById("reservationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            // Here you can add JavaScript to handle form submission, such as AJAX requests to the server
+            // for processing the reservation, updating the reservation status, etc.
+            // This could involve sending the form data to a server-side script using fetch() or XMLHttpRequest.
+            // For simplicity, I'm just displaying a success message here.
+            
+            document.getElementById("reservationStatus").innerText = "Tickets reserved successfully!";
+        });
+    </script>
+</body>
+</html>
